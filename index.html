@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="TestApp">
+  <head>
+    <!--<base href="/">-->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+      
+    <script src="app/app.module.js"></script>
+    <script src="app/core/core.module.js"></script>
+    <script src="app/blocks/blocks.module.js"></script>
+    <script src="app/blocks/services/services.module.js"></script>
+    <script src="app/pages/test/test.module.js"></script>
+      
+    <script src="app/app.config.js"></script>
+    <script src="app/blocks/services/test.service.js"></script>
+    <script src="app/core/core.controller.js"></script>
+    <script src="app/pages/test/test.controller.js"></script>
+      
+  </head>
+  <body ng-controller="CoreController as cc"> 
+    <div>
+        <label>Name:</label>
+        <input type="text" ng-model="yourName" placeholder="Enter a name here">
+        <hr>
+        <h1>Hello {{yourName}}!</h1>        
+        <a href="#" ng-click="cc.changeLocation()">ПЕРЕЙТИ НА ДРУГУЮ ВЬЮХУ</a>        
+        <div ng-view></div>
+    </div>
+  </body>
+</html>
