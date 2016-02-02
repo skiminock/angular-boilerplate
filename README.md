@@ -2,4 +2,4 @@
 
 1. npm install
 
-2. grunt
+2. gulp
