@@ -1,6 +1,15 @@
 var gulp    = require('gulp'),
 	connect = require('gulp-connect'),
-	inject  = require('gulp-inject');
+	inject  = require('gulp-inject'),
+    concat = require('gulp-concat');
+
+gulp.task('js-dev', function () {
+
+    var target = gulp.src('./index.html');
+    var sources = gulp.src([ 'app/**/*.module.js', 'app/**/*.js'], {read: true});    
+    return target.pipe(inject(sources)).pipe(gulp.dest('.'));
+    
+});
 
 gulp.task('connect', function () {
 
@@ -14,4 +23,4 @@ gulp.task('connect', function () {
 
 });
 
-gulp.task('default', ['connect']);
+gulp.task('default', ['connect', 'js-dev']);
