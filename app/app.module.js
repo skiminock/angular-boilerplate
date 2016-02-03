@@ -4,4 +4,4 @@
         //pages
         "TestApp.test"
     ]);
-})()
+})();
