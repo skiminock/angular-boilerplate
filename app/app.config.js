@@ -2,17 +2,16 @@
 
     angular.module("TestApp").config(config);
 
-    config.$inject = ["$routeProvider", "$locationProvider"];
+    config.$inject = ["$stateProvider", "$urlRouterProvider", "$locationProvider"];
 
-    function config($routeProvider, $locationProvider) {
+    function config($stateProvider, $urlRouterProvider, $locationProvider) {
 
-        $routeProvider
-            .when('/', {
-              templateUrl:'app/pages/home/home.html',
-            })
-            .otherwise({
-              redirectTo:'/'
-            });
+        $stateProvider.state("home", {
+            url: "",
+            templateUrl: "app/pages/home/home.html"
+        });
+        
+        $urlRouterProvider.otherwise("/");
 
         $locationProvider.html5Mode({
             enabled: true,

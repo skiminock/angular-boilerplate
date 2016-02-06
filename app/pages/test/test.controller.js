@@ -5,14 +5,15 @@
     testController.$inject = ["TestService"];
 
     function testController(testService) {
-        
+
         var vm = this;
-        
+
         activate();
-        
+
         function activate(){
+
             vm.items = testService.getItems();
         }
     };
-    
+
 })();

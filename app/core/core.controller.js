@@ -2,18 +2,19 @@
     angular.module("TestApp.core")
         .controller("CoreController", coreController);
 
-    coreController.$inject = ["$location"];
+    coreController.$inject = ["$state"];
 
-    function coreController($location) {
+    function coreController($state) {
         var vm = this;
         vm.changeLocation = changeLocation;
 
         function changeLocation(){
-            if ($location.path() == "/test"){
-                $location.path("/");
+
+            if ($state.current.name == "test"){
+                $state.go("home");
             }else{
-                $location.path("/test");
+                $state.go("test");
             }
-        }        
+        }
     };
 })();

@@ -1,7 +1,7 @@
 (function() {
     angular.module("TestApp.core", [
         //angular modules
-        "ngRoute",
+        "ui.router",
         //cross-app modules
         "TestApp.blocks"
         //third party library

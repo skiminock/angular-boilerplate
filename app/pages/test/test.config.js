@@ -2,13 +2,14 @@
 
     angular.module("TestApp.test").config(config);
 
-    config.$inject = ["$routeProvider"];
+    config.$inject = ["$stateProvider"];
 
-    function config($routeProvider) {
+    function config($stateProvider) {
 
-        $routeProvider.when('/test', {
-            controller:'TestController as tc',
-            templateUrl:'app/pages/test/test.html'
+        $stateProvider.state("test", {
+            url: "/test",
+            templateUrl: "app/pages/test/test.html",
+            controller:'TestController as tc'
         });
 
     };
