@@ -24,29 +24,29 @@ gulp.task('connect', function () {
 gulp.task('js-dev', function () {
 
     var target = gulp.src('./index.html');
-    var sources = gulp.src([ 'app/**/*.module.js', 'app/**/*.js'], {read: true});    
+    var sources = gulp.src([ 'app/**/*.module.js', 'app/**/*.js'], {read: true});
     return target.pipe(inject(sources)).pipe(gulp.dest('.'));
-    
+
 });
 
 /*-------------------------------------prod js only----------------------------------------*/
 
 gulp.task('build-js-prod', function () {
-    
+
     return gulp.src([ 'app/**/*.module.js', 'app/**/*.js'])
         .pipe(concat('build/scripts.js'))
     	 //.pipe(ngmin({dynamic: false}))
         .pipe(uglify())
         .pipe(gulp.dest('.'))
-    
+
 });
 
 gulp.task('js-prod', ['build-js-prod'], function () {
-    
+
     var target = gulp.src('./index.html');
-    var sources = gulp.src('build/scripts.js', {read: true});    
+    var sources = gulp.src('build/scripts.js', {read: true});
     return target.pipe(inject(sources)).pipe(gulp.dest('.'));
-    
+
 });
 
 /*-------------------------------------variants----------------------------------------*/
@@ -80,5 +80,3 @@ gulp.task('prod', [
 gulp.task('default', function() {
   console.log('no actions. use \'dev\' or \'prod\' tasks ')
 });
-
-

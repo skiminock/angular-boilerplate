@@ -9,11 +9,15 @@
         vm.changeLocation = changeLocation;
 
         function changeLocation(){
-
+            
             if ($state.current.name == "test"){
-                $state.go("home");
+                $state.go("home", {}, {
+                    location: true, inherit: true,  notify: true
+                });
             }else{
-                $state.go("test");
+                $state.go("test", {}, {
+                    location: true, inherit: true,  notify: true
+                });
             }
         }
     };

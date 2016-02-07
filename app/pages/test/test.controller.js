@@ -11,7 +11,7 @@
         activate();
 
         function activate(){
-
+            
             vm.items = testService.getItems();
         }
     };
