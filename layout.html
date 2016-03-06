@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="TestApp">
+    <head>
+        <!--<base href="/">-->
+        <script src="/node_modules/lodash/lodash.js"></script>
+        <script src="/node_modules/angular/angular.js"></script>
+        <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="/node_modules/moment/moment.js"></script>
+        <meta name="name" content="content" charset="utf-8">
+        <!-- inject:js -->
+        <!-- endinject -->
+    </head>
+    <body ng-controller="CoreController as cc">
+        <h2>All not abstract app routes</h2>
+        <div ng-repeat="s in cc.allStates">
+            <a ui-sref="{{s.name}}" ng-bind="::s.name"></a><br>
+        </div>
+        <div ui-view></div>
+    </body>
+</html>
