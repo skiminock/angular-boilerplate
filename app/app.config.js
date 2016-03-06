@@ -1,22 +1,13 @@
 (function () {
 
-    angular.module("TestApp").config(config);
+    angular.module("TestApp")
+        .config(config);
 
-    config.$inject = ["$stateProvider", "$urlRouterProvider", "$locationProvider"];
+    config.$inject = ["$stateProvider", "$urlRouterProvider"];
 
-    function config($stateProvider, $urlRouterProvider, $locationProvider) {
-
-        $stateProvider.state("home", {
-            url: "",
-            templateUrl: "app/pages/home/home.html"
-        });
+    function config($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise("/");
-
-        // $locationProvider.html5Mode({
-        //     enabled: true,
-        //     requireBase: false
-        // });
 
     };
 

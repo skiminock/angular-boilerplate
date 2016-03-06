@@ -1,5 +1,5 @@
 (function () {
-    angular.module("TestApp.test", [
+    angular.module("TestApp.home", [
         "TestApp.core"
     ]);
 })();

@@ -2,7 +2,9 @@
     angular.module("TestApp", [
         "TestApp.core",
         //pages
-        "TestApp.test",
-        "TestApp.common"
+        "TestApp.home",
+        "TestApp.simple",
+        "TestApp.inherit",
+        "TestApp.abstract"
     ]);
 })();

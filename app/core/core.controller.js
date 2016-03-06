@@ -2,23 +2,16 @@
     angular.module("TestApp.core")
         .controller("CoreController", coreController);
 
-    coreController.$inject = ["$state"];
+    coreController.$inject = ["$controller"];
 
-    function coreController($state) {
+    function coreController($controller) {
+
         var vm = this;
-        vm.changeLocation = changeLocation;
+        activate();
 
-        function changeLocation(){
-            
-            if ($state.current.name == "test"){
-                $state.go("home", {}, {
-                    location: true, inherit: true,  notify: true
-                });
-            }else{
-                $state.go("test", {}, {
-                    location: true, inherit: true,  notify: true
-                });
-            }
+        function activate(){
+            angular.extend(vm, $controller('BaseController', {}));
         }
+
     };
 })();

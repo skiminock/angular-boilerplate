@@ -1,38 +1,21 @@
 <!doctype html>
 <html ng-app="TestApp">
-  <head>
-    <!--<base href="/">-->
-    <script src="/node_modules/angular/angular.js"></script>
-    <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-    <meta name="name" content="content" charset="utf-8">
-    <!-- inject:js -->
-    <script src="/app/app.module.js"></script>
-    <script src="/app/blocks/blocks.module.js"></script>
-    <script src="/app/core/core.module.js"></script>
-    <script src="/app/blocks/services/services.module.js"></script>
-    <script src="/app/pages/common/common.module.js"></script>
-    <script src="/app/pages/test/test.module.js"></script>
-    <script src="/app/pages/common/azaza/azaza.module.js"></script>
-    <script src="/app/app.config.js"></script>
-    <script src="/app/core/core.controller.js"></script>
-    <script src="/app/blocks/services/test.service.js"></script>
-    <script src="/app/pages/common/common.config.js"></script>
-    <script src="/app/pages/test/test.config.js"></script>
-    <script src="/app/pages/test/test.controller.js"></script>
-    <!-- endinject -->
-  </head>
-  <body ng-controller="CoreController as cc">
-    <div>
-        <label>Name:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter a name here">
-        <hr>
-        <h1>Hello {{yourName}}!</h1>
-        <button ng-click="cc.changeLocation()">ПЕРЕЙТИ НА ДРУГУЮ ВЬЮХУ</button><br>
-
-        <a ui-sref="common">common</a><br>
-        <a ui-sref="common.azaza">common.azaza</a><br>
-        <br>
+    <head>
+        <!--<base href="/">-->
+        <script src="/node_modules/lodash/lodash.js"></script>
+        <script src="/node_modules/angular/angular.js"></script>
+        <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="/node_modules/moment/moment.js"></script>
+        <meta name="name" content="content" charset="utf-8">
+        <!-- inject:js -->
+        <script src="/build/scripts.js"></script>
+        <!-- endinject -->
+    </head>
+    <body ng-controller="CoreController as cc">
+        <h2>All not abstract app routes</h2>
+        <div ng-repeat="s in cc.allStates">
+            <a ui-sref="{{s.name}}" ng-bind="::s.name"></a><br>
+        </div>
         <div ui-view></div>
-    </div>
-  </body>
+    </body>
 </html>

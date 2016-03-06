@@ -1,9 +1,8 @@
 (function() {
     angular.module("TestApp.core", [
-        //angular modules
-        "ui.router",
-        //cross-app modules
+        //angular native modules + third party modules
+        //..
+        //cross-app module
         "TestApp.blocks"
-        //third party library
     ]);
 })();
